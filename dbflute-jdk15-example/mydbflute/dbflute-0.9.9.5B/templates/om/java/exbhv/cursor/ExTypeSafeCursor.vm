@@ -1,0 +1,18 @@
+${database.allClassCopyright}package ${myExtendedCursorPackageName};
+#set ($myClassName = "${myExtendedTypeSafeCursorClassName}")
+
+import ${myBaseCursorPackageName}.${myBaseTypeSafeCursorClassName};
+
+/**
+ * The cursor of ${table.name}.
+ * <p>
+ * You can implement your original methods here.
+ * This class remains when re-generating.
+ * </p>
+ * @author ${database.classAuthor}
+ */
+public class ${myClassName} extends ${myBaseTypeSafeCursorClassName} {
+
+    /** Serial version UID. (Default) */
+    private static final long serialVersionUID = 1L;
+}

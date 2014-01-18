@@ -1,0 +1,69 @@
+${database.allClassCopyright}package ${glPackageBaseCommon};
+
+/**
+ * The interface of entity defined common columns.
+ * @author ${database.classAuthor}
+ */
+public interface ${glEntityDefinedCommonColumn} extends ${glEntity} {
+#if ($database.isExistCommonColumnSetupElement())
+#foreach ($columnName in ${database.commonColumnNameList})
+#set ($filteredColumnName = ${database.filterCommonColumn(${columnName})})
+#set ($commonColumnMap = ${database.CommonColumnMap})
+#set ($columnType = ${commonColumnMap.get(${columnName})})
+#set ($javaNative = ${database.convertJavaNativeByJdbcType(${columnType})})
+#set ($javaName = ${database.convertJavaNameByJdbcNameAsColumn(${filteredColumnName})})
+#set ($uncapitalisedJavaName = ${database.convertUncapitalisedJavaNameByJdbcNameAsColumn(${filteredColumnName})})
+
+    /**
+     * Get the value of ${uncapitalisedJavaName}.
+     * @return The value of ${uncapitalisedJavaName}. (NullAllowed)
+     */
+    public ${javaNative} get${javaName}();
+
+    /**
+     * Set the value of ${uncapitalisedJavaName}.
+     * @param ${uncapitalisedJavaName} The value of ${uncapitalisedJavaName}. (NullAllowed)
+     */
+    public void set${javaName}(${javaNative} ${uncapitalisedJavaName});
+#if (${database.isAllClassificationColumn($filteredColumnName)})
+#set ($classificationName = $database.getAllClassificationName($filteredColumnName))
+#set ($classificationTop = $database.getClassificationTop($classificationName))
+#foreach ($classificationElement in $classificationTop.classificationElementList)
+
+    /**
+     * Classify the value of ${uncapitalisedJavaName} as ${classificationElement.name}. <br />
+     * $database.buildClassificationApplicationComment($classificationElement)
+     */
+    public void classify${javaName}${classificationElement.name}();
+
+    /**
+     * Is the value of ${uncapitalisedJavaName} '${classificationElement.name}'? <br />
+     * $database.buildClassificationApplicationComment($classificationElement)
+     * <p>
+     * The difference of capital letters and small letters is NOT distinguished.
+     * If the value is null, this method returns false!
+     * </p>
+     * @return The determination, true or false.
+     */
+    public boolean is${javaName}${classificationElement.name}();
+#end
+#end
+#end
+#end
+
+    /**
+	 * Enable common column auto set up. {for after disable because the default is enabled}
+	 */
+    public void enableCommonColumnAutoSetup();
+
+    /**
+	 * Disable common column auto set up.
+	 */
+    public void disableCommonColumnAutoSetup();
+	
+    /**
+	 * Can the entity set up common column by auto?
+	 * @return The determination, true or false.
+	 */
+	public boolean canCommonColumnAutoSetup();
+}

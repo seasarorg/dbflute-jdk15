@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans
+    PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd"
+>
+<beans${database.DBFluteBeansDefaultAttribute}>
+    <!-- The components of DBFlute Runtime. -->
+    <bean id="${database.DBFluteInitializerComponentName}" class="${database.DBFluteInitializerClass}">
+        <constructor-arg index="0"><ref bean="${database.DBFluteBeansDataSourceName}"/></constructor-arg>
+    </bean>
+    <bean id="${database.invokerAssistantComponentName}" class="${database.implementedInvokerAssistantClass}" autowire="byType">
+        <property name="dataSource"><ref bean="${database.DBFluteBeansDataSourceName}"/></property>
+        <property name="introduction"><ref bean="${database.DBFluteInitializerComponentName}"/></property>
+    </bean>
+    <bean id="${database.commonColumnAutoSetupperComponentName}" class="${database.implementedCommonColumnAutoSetupperClass}" autowire="byType"/>
+    <bean id="${database.behaviorSelectorComponentName}" class="${glPackageBaseCommon}.${glImplementedBehaviorSelector}" autowire="byType"/>
+    <bean id="${database.behaviorCommandInvokerComponentName}" class="org.seasar.dbflute.bhv.core.BehaviorCommandInvoker" autowire="byType">
+        <property name="invokerAssistant"><ref bean="${database.invokerAssistantComponentName}"/></property>
+    </bean>
+
+    <!-- The components of Behavior. -->
+#foreach ($table in $database.tables)
+	<bean id="${table.behaviorComponentName}" class="${table.extendedBehaviorFullClassName}" autowire="byType">
+        <property name="behaviorCommandInvoker"><ref bean="${database.behaviorCommandInvokerComponentName}"/></property>
+        <property name="behaviorSelector"><ref bean="${database.behaviorSelectorComponentName}"/></property>
+#if ($table.isWritable())
+        <property name="commonColumnAutoSetupper"><ref bean="${database.commonColumnAutoSetupperComponentName}"/></property>
+#end
+    </bean>
+#end
+</beans>

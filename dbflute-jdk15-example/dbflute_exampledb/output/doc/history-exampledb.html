@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>exampledb history</title>
+	<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Verdana, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS P Gothic", "MS Pゴシック", sans-serif;
+	font-size: 80%;
+	margin: 1em 1.5em;
+	background-color: #ffffee;
+}
+
+/* heading */
+h1 {
+	font-size: 1.5em;
+	border-bottom: 2px solid #af0000;
+	border-top: 2px solid #af0000;
+}
+h2 {
+	margin-top: 2em;
+	border-bottom: 2px solid #af0000;
+	border-left: 10px solid #af0000;
+	text-indent: 1em;
+	font-size: 1.6em;
+}
+h3 {
+	width: 10em;
+	margin: 0.8em 0;
+	padding-left: 1.8em;
+	border-bottom: solid 1px #333;
+	color: #555;
+	font-size: 1.2em;
+}
+h4 {
+	margin: 1em 0em;
+	font-size: 1em;
+	font-weight: normal;
+	display: list-item;
+}
+h5 {
+	width: 11em;
+	font-size: 80%;
+	border-bottom: solid 1px #333;
+	text-indent: 0.3em;
+	color: #555;
+}
+
+.table-content {
+	margin: 0 6em;
+}
+.column-content {
+	margin: 0.5em 1em 0.5em 3em;
+	line-height: 1.4em;
+}
+
+div.change-table-content {
+	margin-left: 3em;
+}
+
+dl.column-content dt {
+	display: list-item;
+}
+dl.column-content dd {
+	margin: 0 4em;
+}
+dl.column-content dd span {
+	display: block;
+	float: left;
+	width: 6em;
+	margin-right: 1.5em;
+	border-right: dotted 2px #333;
+	font-weight: bold;
+	font-size: 80%;
+	color: #555;
+}
+
+span.dt {
+	font-size: 80%;
+}
+p.comment {
+	margin-left: 23em;
+}
+p.tablecount {
+	margin-left: 23em;
+}
+	</style>
+</head>
+
+<body>
+<h1>History for exampledb (h2)</h1>
+
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/04/12 11:23:51</h2>
+	<p class="tablecount"><span class="dt">table count: </span>20&nbsp;-&gt;&nbsp;22</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li><a href="./schema-exampledb.html#vendor_identity_only">VENDOR_IDENTITY_ONLY</a></li>
+		<li><a href="./schema-exampledb.html#vendor_primary_key_only">VENDOR_PRIMARY_KEY_ONLY</a></li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/25 12:50:22</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR_CHECK</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>J_A_V_A_BEANS_PROPERTY</li>
+				<li>J_POP_BEANS_PROPERTY</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>J_A_V_A_BEAN_PROPERTY</li>
+				<li>J_BEAN_PROPERTY</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/25 12:44:31</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR_CHECK</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>J_BEAN_PROPERTY</li>
+				<li>J_A_V_A_BEAN_PROPERTY</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>U_Y_TEXT</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 13:52:29</h2>
+	<p class="tablecount"><span class="dt">table count: </span>16&nbsp;-&gt;&nbsp;20</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+	</ul>
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;住所:&nbsp;まるごと住所</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ログインID:&nbsp;"</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ID:&nbsp;"</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン日時:&nbsp;ログインした瞬間の日時。</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータス名称:&nbsp;"</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"null"&nbsp;-&gt;&nbsp;"商品:&nbsp;"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ハンドルコード:&nbsp;商品を識別する業務上のコード。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリコード:&nbsp;"</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリ名称:&nbsp;"</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;親カテゴリコード:&nbsp;最上位の場合はデータなし。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ステータスコード:&nbsp;商品ステータスを識別するコード。</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ID:&nbsp;商品を参照するID。</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入日時:&nbsp;購入した瞬間の日時。</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入数量:&nbsp;購入した商品の（一回の購入における）数量。</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域名称:&nbsp;地域を表す名称。</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを識別するコード。</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;ランクに関する業務的な説明。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上の表示順を表現する番号。</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"退会理由コード:&nbsp;"</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 13:49:55</h2>
+	<p class="tablecount"><span class="dt">table count: </span>20&nbsp;-&gt;&nbsp;16</p>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>住所:&nbsp;まるごと住所&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>"会員ログインID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>"会員ID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>ログイン日時:&nbsp;ログインした瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>"会員ステータス名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"商品:&nbsp;"&nbsp;-&gt;&nbsp;"null"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>商品ハンドルコード:&nbsp;商品を識別する業務上のコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>"商品カテゴリコード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>"商品カテゴリ名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>親カテゴリコード:&nbsp;最上位の場合はデータなし。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>商品ステータスコード:&nbsp;商品ステータスを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>商品ID:&nbsp;商品を参照するID。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>購入日時:&nbsp;購入した瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>購入数量:&nbsp;購入した商品の（一回の購入における）数量。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>地域名称:&nbsp;地域を表す名称。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。&nbsp;-&gt;&nbsp;</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;ランクに関する業務的な説明。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上の表示順を表現する番号。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>"退会理由コード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+	</div>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 13:23:48</h2>
+	<p class="tablecount"><span class="dt">table count: </span>14&nbsp;-&gt;&nbsp;20</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+		<li>SUMMARY_PRODUCT</li>
+		<li>SUMMARY_WITHDRAWAL</li>
+	</ul>
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;住所:&nbsp;まるごと住所</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ログインID:&nbsp;"</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ID:&nbsp;"</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン日時:&nbsp;ログインした瞬間の日時。</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータス名称:&nbsp;"</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"null"&nbsp;-&gt;&nbsp;"商品:&nbsp;"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ハンドルコード:&nbsp;商品を識別する業務上のコード。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリコード:&nbsp;"</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリ名称:&nbsp;"</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;親カテゴリコード:&nbsp;最上位の場合はデータなし。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ステータスコード:&nbsp;商品ステータスを識別するコード。</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ID:&nbsp;商品を参照するID。</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入日時:&nbsp;購入した瞬間の日時。</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入数量:&nbsp;購入した商品の（一回の購入における）数量。</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域名称:&nbsp;地域を表す名称。</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを識別するコード。</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;ランクに関する業務的な説明。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上の表示順を表現する番号。</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"退会理由コード:&nbsp;"</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 13:05:22</h2>
+	<p class="tablecount"><span class="dt">table count: </span>20&nbsp;-&gt;&nbsp;14</p>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>住所:&nbsp;まるごと住所&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>"会員ログインID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>"会員ID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>ログイン日時:&nbsp;ログインした瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>"会員ステータス名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"商品:&nbsp;"&nbsp;-&gt;&nbsp;"null"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>商品ハンドルコード:&nbsp;商品を識別する業務上のコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>"商品カテゴリコード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>"商品カテゴリ名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>親カテゴリコード:&nbsp;最上位の場合はデータなし。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>商品ステータスコード:&nbsp;商品ステータスを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>商品ID:&nbsp;商品を参照するID。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>購入日時:&nbsp;購入した瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>購入数量:&nbsp;購入した商品の（一回の購入における）数量。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>地域名称:&nbsp;地域を表す名称。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。&nbsp;-&gt;&nbsp;</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;ランクに関する業務的な説明。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上の表示順を表現する番号。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>"退会理由コード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+	</div>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+		<li>SUMMARY_PRODUCT</li>
+		<li>SUMMARY_WITHDRAWAL</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 12:59:17</h2>
+	<p class="tablecount"><span class="dt">table count: </span>14&nbsp;-&gt;&nbsp;20</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+		<li>SUMMARY_PRODUCT</li>
+		<li>SUMMARY_WITHDRAWAL</li>
+	</ul>
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;住所:&nbsp;まるごと住所</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ログインID:&nbsp;"</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ID:&nbsp;"</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン日時:&nbsp;ログインした瞬間の日時。</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"会員ステータス名称:&nbsp;"</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"null"&nbsp;-&gt;&nbsp;"商品:&nbsp;"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ハンドルコード:&nbsp;商品を識別する業務上のコード。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリコード:&nbsp;"</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"商品カテゴリ名称:&nbsp;"</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;親カテゴリコード:&nbsp;最上位の場合はデータなし。</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ステータスコード:&nbsp;商品ステータスを識別するコード。</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;商品ID:&nbsp;商品を参照するID。</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入日時:&nbsp;購入した瞬間の日時。</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入数量:&nbsp;購入した商品の（一回の購入における）数量。</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;地域名称:&nbsp;地域を表す名称。</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランクコード:&nbsp;サービスランクを識別するコード。</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;説明:&nbsp;ランクに関する業務的な説明。</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;表示順:&nbsp;UI上の表示順を表現する番号。</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">null&nbsp;-&gt;&nbsp;退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>""&nbsp;-&gt;&nbsp;"退会理由コード:&nbsp;"</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>&nbsp;-&gt;&nbsp;退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2012/03/05 12:43:50</h2>
+	<p class="tablecount"><span class="dt">table count: </span>20&nbsp;-&gt;&nbsp;14</p>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員:&nbsp;会員登録時にデータが登録される。基本的に物理削除はなく、退会したらステータスが退会会員になる。ライフサイクルやカテゴリの違う会員それぞれの詳細情報は、別途&nbsp;one-to-one&nbsp;のテーブルに。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を識別するID。連番として自動採番される。<br />（会員IDだけに限らず）採番方法はDBMS次第。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_NAME</dt>
+				<dd><span>Comment</span>会員名称:&nbsp;会員のフルネームの名称。<br />苗字と名前を分けて管理することも多いが、ここでは&nbsp;Example&nbsp;なので単純にひとまとめ。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ACCOUNT</dt>
+				<dd><span>Comment</span>会員アカウント:&nbsp;会員がログイン時に利用するアカウントNO。<br />昨今、メールアドレスをログインIDとすることが多いので、あまり見かけなくないかも。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>会員ステータスコード:&nbsp;会員ステータスを参照するコード。<br />ステータスが変わるたびに、このカラムが更新される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>FORMALIZED_DATETIME</dt>
+				<dd><span>Comment</span>正式会員日時:&nbsp;会員が正式に確定した日時。<br />一度確定したら更新されない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>BIRTHDATE</dt>
+				<dd><span>Comment</span>生年月日:&nbsp;必須項目ではないので、このデータがない会員もいる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_DATETIME</dt>
+				<dd><span>Comment</span>登録日時:&nbsp;レコードが登録された日時。<br />会員が登録された日時とほぼ等しいが、そういった業務的な役割を兼務させるのはあまり推奨されない。<br />どのテーブルでも同じなので、共通カラムの説明はこのテーブルでしか書かない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGISTER_USER</dt>
+				<dd><span>Comment</span>登録ユーザ:&nbsp;レコードを登録したユーザ。<br />会員テーブルであれば当然、会員自身であるはずだが、他のテーブルの場合では管理画面から運用者による登録など考えられるので、しっかり保持しておく。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_DATETIME</dt>
+				<dd><span>Comment</span>更新日時:&nbsp;レコードが（最後に）更新された日時。<br />業務的な利用はあまり推奨されないと別項目で説明したが、このカラムはソートの要素としてよく利用される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>UPDATE_USER</dt>
+				<dd><span>Comment</span>更新ユーザ:&nbsp;レコードを更新したユーザ。<br />システムは誰が何をしたのかちゃんと覚えている。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VERSION_NO</dt>
+				<dd><span>Comment</span>バージョンNO:&nbsp;レコードのバージョンを示すNO。<br />更新回数と等しく、主に排他制御のために利用される。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員住所情報:&nbsp;会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br />会員を基点に考えた場合、構造的にはone-to-many&nbsp;だが、業務的な定型条件でone-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ。<br />有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0...1"&nbsp;である。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ADDRESS_ID</dt>
+				<dd><span>Comment</span>会員住所ID:&nbsp;会員住所を識別するID。<br />履歴分も含むテーブルなので、これ自体はFKではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />履歴分を含むため、これだけではユニークにはならない。<br />有効開始日と合わせて複合ユニーク制約となるが、<br />厳密には完全な制約にはなっていない。<br />有効期間の概念はRDBでは表現しきれないのである。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_BEGIN_DATE</dt>
+				<dd><span>Comment</span>有効開始日:&nbsp;一つの有効期間の開始を示す日付。<br />前の有効終了日の次の日の値が格納される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>VALID_END_DATE</dt>
+				<dd><span>Comment</span>有効終了日:&nbsp;有効期間の終了日。<br />次の有効開始日の一日前の値が格納される。<br />ただし、次の有効期間がない場合は&nbsp;9999/12/31&nbsp;となる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>ADDRESS</dt>
+				<dd><span>Comment</span>住所:&nbsp;まるごと住所&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を参照するID。<br />ここでは特に住所の内容と連動しているわけではない。<br />（業務的one-to-oneの親テーブルの表現したかっ...）&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_LOGIN</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ログイン:&nbsp;ログインするたびに登録されるログイン履歴。<br />登録されたら更新されるも削除されることもない。さらには登録する人もプログラムもはっきりしているので、ここでは共通カラムは(紙面の都合上もあって)省略している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_LOGIN_ID</dt>
+				<dd><span>Comment</span>"会員ログインID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>"会員ID:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>LOGIN_DATETIME</dt>
+				<dd><span>Comment</span>ログイン日時:&nbsp;ログインした瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MOBILE_LOGIN_FLG</dt>
+				<dd><span>Comment</span>モバイルログインフラグ:&nbsp;モバイル機器からのログインか否か。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>ログイン会員ステータスコード:&nbsp;ログイン時の会員ステータス&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員セキュリティ情報:&nbsp;会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>LOGIN_PASSWORD</dt>
+				<dd><span>Comment</span>ログインパスワード:&nbsp;ログイン時に利用するパスワード。<br />本当は良くないが、Exampleなのでひとまず暗号化していない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_QUESTION</dt>
+				<dd><span>Comment</span>リマインダ質問:&nbsp;パスワードを忘れた際のリマインダ機能における質問の内容。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_ANSWER</dt>
+				<dd><span>Comment</span>リマインダ回答:&nbsp;パスワードを忘れた際のリマインダ機能における質問の答え。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REMINDER_USE_COUNT</dt>
+				<dd><span>Comment</span>リマインダ利用回数:&nbsp;リマインダを利用した回数。<br />多いと忘れっぽい会員と言えるが、<br />そんなことを知ってもしょうがない。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員サービス:&nbsp;会員のサービス情報（ポイントサービスなど）。<br />ExampleDBとして、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_SERVICE_ID</dt>
+				<dd><span>Comment</span>会員サービスID:&nbsp;独立した主キーとなるが、実質的に会員IDとは&nbsp;one-to-one&nbsp;である。&nbsp;-&gt;&nbsp;</dd>
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。ユニークなので、会員とは&nbsp;one-to-one&nbsp;の関係に。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_COUNT</dt>
+				<dd><span>Comment</span>サービスポイント数:&nbsp;会員が現在利用できるサービスポイントの数。<br />基本的に、購入時には増えてポイントを使ったら減る。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを参照するコード。<br />どんなランクがあるのかドキドキですね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員ステータス:&nbsp;会員のステータスを示す固定的なマスタテーブル。<br />業務で増えることはなく、増減するときは実装もともなうレベルの業務変更と考えられる。<br /><br />こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるという<br />ところで割り切っている。実業務では統一的に定義することもある。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_STATUS_CODE</dt>
+				<dd><span>Comment</span>"会員ステータスコード:&nbsp;会員ステータスを識別するコード。<br />固定的なデータなので、連番とか番号にはせず、<br />データを直接見たときも人が直感的にわかるように、<br />このような３桁のコード形式にしている。<br />"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>MEMBER_STATUS_NAME</dt>
+				<dd><span>Comment</span>"会員ステータス名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;会員ステータスそれぞれの説明。<br />気の利いた説明があるとディベロッパーがとても助かる。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上のステータスの表示順を示すNO。<br />並べるときは、このカラムに対して昇順のソート条件にする。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">会員退会情報:&nbsp;退会会員の退会に関する詳細な情報。<br />退会会員のみデータが存在する。（"1&nbsp;:&nbsp;0...1"&nbsp;のパターンの&nbsp;one-to-one）<br />共通カラムがあってバージョンNOがないパターン。基本的に更新が入ることはないが、登録ユーザを保持したいのと、重要なデータなので更新系の情報も。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>退会理由コード:&nbsp;退会した定型理由を参照するコード。<br />何も言わずに退会する会員もいるので必須項目ではない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_REASON_INPUT_TEXT</dt>
+				<dd><span>Comment</span>退会理由入力テキスト:&nbsp;会員がフリーテキストで入力できる退会理由。<br />もう言いたいこと言ってもらう感じ。<br />サイト運営側としては真摯に受け止めて改善していきたい。&nbsp;-&gt;&nbsp;</dd>
+				<dt>WITHDRAWAL_DATETIME</dt>
+				<dd><span>Comment</span>退会日時:&nbsp;退会した瞬間の日時。<br />正式会員日時と違い、こっちはone-to-oneの別テーブルで。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">"商品:&nbsp;"&nbsp;-&gt;&nbsp;"null"</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_NAME</dt>
+				<dd><span>Comment</span>商品名称:&nbsp;ExampleDBとして、コメントの少ないケースを表現するため、<br />あえてコメントを控えている。実業務ではしっかりとコメントを<br />入れることが強く強く推奨される。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_HANDLE_CODE</dt>
+				<dd><span>Comment</span>商品ハンドルコード:&nbsp;商品を識別する業務上のコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品カテゴリ:&nbsp;商品のカテゴリを表現するマスタ。<br />自己参照の階層になっている。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>"商品カテゴリコード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PRODUCT_CATEGORY_NAME</dt>
+				<dd><span>Comment</span>"商品カテゴリ名称:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>PARENT_CATEGORY_CODE</dt>
+				<dd><span>Comment</span>親カテゴリコード:&nbsp;最上位の場合はデータなし。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">商品ステータス:&nbsp;商品のステータスを表現する固定的なマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>PRODUCT_STATUS_CODE</dt>
+				<dd><span>Comment</span>商品ステータスコード:&nbsp;商品ステータスを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">購入:&nbsp;一つの商品に対する購入を表現する。<br />実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>MEMBER_ID</dt>
+				<dd><span>Comment</span>会員ID:&nbsp;会員を参照するID。<br />購入を識別する自然キー（複合ユニーク制約）の筆頭要素。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PRODUCT_ID</dt>
+				<dd><span>Comment</span>商品ID:&nbsp;商品を参照するID。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_DATETIME</dt>
+				<dd><span>Comment</span>購入日時:&nbsp;購入した瞬間の日時。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_COUNT</dt>
+				<dd><span>Comment</span>購入数量:&nbsp;購入した商品の（一回の購入における）数量。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PURCHASE_PRICE</dt>
+				<dd><span>Comment</span>購入価格:&nbsp;購入によって実際に会員が支払った（支払う予定の）価格。<br />基本は商品の定価に購入数量を掛けたものになるが、<br />ポイント利用や割引があったりと必ずしもそうはならない。&nbsp;-&gt;&nbsp;</dd>
+				<dt>PAYMENT_COMPLETE_FLG</dt>
+				<dd><span>Comment</span>支払完了フラグ:&nbsp;この購入に関しての支払いが完了しているか否か。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">地域:&nbsp;主に会員の住所に対応する地域。<br />かなりざっくりした感じではある。<br />業務的one-to-oneの親テーブル。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>REGION_ID</dt>
+				<dd><span>Comment</span>地域ID:&nbsp;地域を識別するID。<br />珍しく(固定的な)マスタテーブルとしては数値だが、<br />Exampleなのでやはり色々なパターンがないと。&nbsp;-&gt;&nbsp;</dd>
+				<dt>REGION_NAME</dt>
+				<dd><span>Comment</span>地域名称:&nbsp;地域を表す名称。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">サービスランク:&nbsp;会員のサービスレベルを表現するランク。<br />（ゴールドとかプラチナとか）&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>SERVICE_RANK_CODE</dt>
+				<dd><span>Comment</span>サービスランクコード:&nbsp;サービスランクを識別するコード。&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_RANK_NAME</dt>
+				<dd><span>Comment</span>サービスランク名称:&nbsp;サービスランクの名称。<br />（ゴールドとかプラチナとか基本的には威厳のある名前）&nbsp;-&gt;&nbsp;</dd>
+				<dt>SERVICE_POINT_INCIDENCE</dt>
+				<dd><span>Comment</span>サービスポイント発生率:&nbsp;購入ごとのサービスポイントの発生率。<br />購入価格にこの値をかけた数が発生ポイント。<br />ExampleDBとして数少ない貴重な小数点ありのカラム。&nbsp;-&gt;&nbsp;</dd>
+				<dt>NEW_ACCEPTABLE_FLG</dt>
+				<dd><span>Comment</span>新規受け入れ可能フラグ:&nbsp;このランクへの新規受け入れができるかどうか。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DESCRIPTION</dt>
+				<dd><span>Comment</span>説明:&nbsp;ランクに関する業務的な説明。&nbsp;-&gt;&nbsp;</dd>
+				<dt>DISPLAY_ORDER</dt>
+				<dd><span>Comment</span>表示順:&nbsp;UI上の表示順を表現する番号。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+		<h4>WITHDRAWAL_REASON</h4>
+		<div class="change-table-content">
+			<h5>Comment</h5>
+			<div class="column-content">退会理由:&nbsp;会員に選ばせる定型的な退会理由のマスタ。&nbsp;-&gt;&nbsp;null</div>
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>WITHDRAWAL_REASON_CODE</dt>
+				<dd><span>Comment</span>"退会理由コード:&nbsp;"&nbsp;-&gt;&nbsp;""</dd>
+				<dt>WITHDRAWAL_REASON_TEXT</dt>
+				<dd><span>Comment</span>退会理由テキスト:&nbsp;退会理由の内容。テキスト形式なので目いっぱい書けるが、<br />そうするとUI側できれいに見せるのが大変でしょうね。&nbsp;-&gt;&nbsp;</dd>
+			</dl>
+		</div>
+	</div>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+		<li>VENDOR_CHECK</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+		<li>SUMMARY_PRODUCT</li>
+		<li>SUMMARY_WITHDRAWAL</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/10/19 00:28:11</h2>
+	<p class="tablecount"><span class="dt">table count: </span>18&nbsp;-&gt;&nbsp;20</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN</li>
+		<li>VENDOR_THE_LONG_AND_WINDING_TABLE_AND_COLUMN_REF</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/17 22:38:01</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR_CHECK</h4>
+		<div class="change-table-content">
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>TYPE_OF_NUMERIC_MAXDECIMAL</dt>
+				<dd><span>Size</span>128,&nbsp;38&nbsp;-&gt;&nbsp;38,&nbsp;38</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/17 22:33:24</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR_CHECK</h4>
+		<div class="change-table-content">
+			<h5>Change Column</h5>
+			<dl class="column-content">
+				<dt>TYPE_OF_NUMERIC_MAXDECIMAL</dt>
+				<dd><span>Size</span>38,&nbsp;127&nbsp;-&gt;&nbsp;128,&nbsp;38</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/09 20:41:46</h2>
+	<p class="tablecount"><span class="dt">table count: </span>17&nbsp;-&gt;&nbsp;18</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>MEMBER_ADDRESS</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/09 20:24:02</h2>
+	<p class="tablecount"><span class="dt">table count: </span>18&nbsp;-&gt;&nbsp;17</p>
+
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>MEMBER_ADDRESS</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/03 01:24:36</h2>
+	<p class="tablecount"><span class="dt">table count: </span>19&nbsp;-&gt;&nbsp;18</p>
+
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>MEMBER_XXX</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/06/02 21:15:51</h2>
+	<p class="tablecount"><span class="dt">table count: </span>18&nbsp;-&gt;&nbsp;19</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>MEMBER_XXX</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/05/20 15:57:43</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>MEMBER_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+		<h4>PURCHASE</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_PROCESS</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/05/05 09:39:01</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER_SERVICE</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>MEMBER_SERVICE_ID</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>CONSTRAINT_6F</dt>
+				<dd><span>Column</span>MEMBER_ID&nbsp;-&gt;&nbsp;MEMBER_SERVICE_ID</dd>
+			</dl>
+			<h5>Add UQ</h5>
+			<ul class="column-content">
+				<li>UQ_MEMBER_SERVICE_INDEX_6</li>
+			</ul>
+			<h5>Add Index</h5>
+			<ul class="column-content">
+				<li>FK_MEMBER_SERVICE_MEMBER_INDEX_6</li>
+			</ul>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>DISPLAY_ORDER</li>
+			</ul>
+			<h5>Add UQ</h5>
+			<ul class="column-content">
+				<li>UQ_PRODUCT_STATUS_DISPLAY_ORDER_INDEX_1</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2011/04/18 00:52:40</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>UQ_MEMBER_STATUS_MEMBER_STATUS_NAME_INDEX_4</li>
+			</ul>
+		</div>
+		<h4>PRODUCT_CATEGORY</h4>
+		<div class="change-table-content">
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>UQ_PRODUCT_CATEGORY_PRODUCT_CATEGORY_NAME_INDEX_3</li>
+			</ul>
+		</div>
+		<h4>PRODUCT_STATUS</h4>
+		<div class="change-table-content">
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>UQ_PRODUCT_STATUS_PRODUCT_STATUS_NAME_INDEX_1</li>
+			</ul>
+		</div>
+		<h4>REGION</h4>
+		<div class="change-table-content">
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>UQ_REGION_REGION_NAME_INDEX_8</li>
+			</ul>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Delete UQ</h5>
+			<ul class="column-content">
+				<li>UQ_SERVICE_RANK_SERVICE_RANK_NAME_INDEX_A</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/12/03 21:20:09</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>SUMMARY_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>MEMBER_STATUS_CODE</li>
+				<li>MEMBER_STATUS_NAME</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/12/03 16:37:03</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>SUMMARY_WITHDRAWAL</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>MAX_PURCHASE_PRICE</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/12/03 13:23:03</h2>
+	<p class="tablecount"><span class="dt">table count: </span>17&nbsp;-&gt;&nbsp;18</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>SUMMARY_WITHDRAWAL</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/11/26 23:56:15</h2>
+	<p class="tablecount"><span class="dt">table count: </span>16&nbsp;-&gt;&nbsp;17</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>REGION</li>
+	</ul>
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER_ADDRESS</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>REGION_ID</li>
+			</ul>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>FK_MEMBER_ADDRESS_REGION</li>
+			</ul>
+			<h5>Add Index</h5>
+			<ul class="column-content">
+				<li>FK_MEMBER_ADDRESS_REGION_INDEX_B</li>
+			</ul>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>REGULAR_PRICE</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>PRODUCT_REGULAR_PRICE</li>
+			</ul>
+		</div>
+		<h4>SERVICE_RANK</h4>
+		<div class="change-table-content">
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>REGISTER_DATETIME</li>
+				<li>REGISTER_USER</li>
+				<li>REGISTER_PROCESS</li>
+				<li>UPDATE_DATETIME</li>
+				<li>UPDATE_USER</li>
+				<li>UPDATE_PROCESS</li>
+				<li>VERSION_NO</li>
+			</ul>
+			<h5>Add UQ</h5>
+			<ul class="column-content">
+				<li>UQ_SERVICE_RANK_DISPLAY_ORDER_INDEX_A</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/11/26 19:52:15</h2>
+	<p class="comment">for many pattern tests</p>
+	<p class="tablecount"><span class="dt">table count: </span>13&nbsp;-&gt;&nbsp;16</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>MEMBER_SERVICE</li>
+		<li>PRODUCT_CATEGORY</li>
+		<li>SERVICE_RANK</li>
+	</ul>
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>MEMBER_SECURITY</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>REMINDER_USE_COUNT</li>
+			</ul>
+		</div>
+		<h4>PRODUCT</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>PRODUCT_CATEGORY_CODE</li>
+				<li>PRODUCT_REGULAR_PRICE</li>
+			</ul>
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>FK_PRODUCT_PRODUCT_CATEGORY</li>
+			</ul>
+			<h5>Add Index</h5>
+			<ul class="column-content">
+				<li>FK_PRODUCT_PRODUCT_CATEGORY_INDEX_1</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 16:41:11</h2>
+	<p class="comment">restore the dollar table (wrong deleted)</p>
+	<p class="tablecount"><span class="dt">table count: </span>12&nbsp;-&gt;&nbsp;13</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR_$_DOLLAR</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 16:37:23</h2>
+	<p class="tablecount"><span class="dt">table count: </span>14&nbsp;-&gt;&nbsp;12</p>
+
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>VENDOR-NON COMPILABLE</li>
+		<li>VENDOR_$_DOLLAR</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 06:27:55</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR-NON COMPILABLE</h4>
+		<div class="change-table-content">
+			<h5>Add FK</h5>
+			<ul class="column-content">
+				<li>FK_VENDOR_NON_COMPPILABLE_SELF</li>
+			</ul>
+			<h5>Add Index</h5>
+			<ul class="column-content">
+				<li>FK_VENDOR_NON_COMPPILABLE_SELF_INDEX_D</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 06:15:04</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR-NON COMPILABLE</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>PARENT-ID</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 04:24:10</h2>
+	<p class="tablecount"><span class="dt">table count: </span>4&nbsp;-&gt;&nbsp;14</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>MEMBER</li>
+		<li>MEMBER_ADDRESS</li>
+		<li>MEMBER_LOGIN</li>
+		<li>MEMBER_SECURITY</li>
+		<li>MEMBER_STATUS</li>
+		<li>MEMBER_WITHDRAWAL</li>
+		<li>PRODUCT</li>
+		<li>PRODUCT_STATUS</li>
+		<li>PURCHASE</li>
+		<li>VENDOR-NON COMPILABLE</li>
+		<li>SUMMARY_PRODUCT</li>
+	</ul>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>VENDOR-HYPHEN SPACE</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 04:23:08</h2>
+	<p class="tablecount"><span class="dt">table count: </span>14&nbsp;-&gt;&nbsp;4</p>
+
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>MEMBER</li>
+		<li>MEMBER_ADDRESS</li>
+		<li>MEMBER_LOGIN</li>
+		<li>MEMBER_SECURITY</li>
+		<li>MEMBER_STATUS</li>
+		<li>MEMBER_WITHDRAWAL</li>
+		<li>PRODUCT</li>
+		<li>PRODUCT_STATUS</li>
+		<li>PURCHASE</li>
+		<li>SUMMARY_PRODUCT</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/15 04:10:23</h2>
+	<p class="tablecount"><span class="dt">table count: </span>13&nbsp;-&gt;&nbsp;14</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>VENDOR-HYPHEN SPACE</li>
+		<li>VENDOR_$_DOLLAR</li>
+	</ul>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>TMP_TMPP</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 18:18:45</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>TMP_TMPP</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>VENDOR_ID</li>
+			</ul>
+			<h5>Delete Column</h5>
+			<ul class="column-content">
+				<li>VENDOR_CHECK_ID</li>
+			</ul>
+			<h5>Change PK</h5>
+			<dl class="column-content">
+				<dt>CONSTRAINT_8D</dt>
+				<dd><span>Column</span>VENDOR_CHECK_ID&nbsp;-&gt;&nbsp;VENDOR_ID</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 18:18:05</h2>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>TMP_TMPP</li>
+	</ul>
+	<h3>Delete Table</h3>
+	<ul class="table-content">
+		<li>TMP_TMP</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 18:16:43</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>TMP_TMP</h4>
+		<div class="change-table-content">
+			<h5>Add PK</h5>
+			<ul class="column-content">
+				<li>CONSTRAINT_E3</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 18:16:10</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>TMP_TMP</h4>
+		<div class="change-table-content">
+			<h5>Delete PK</h5>
+			<ul class="column-content">
+				<li>CONSTRAINT_E3</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 18:15:28</h2>
+	<p class="tablecount"><span class="dt">table count: </span>12&nbsp;-&gt;&nbsp;13</p>
+
+	<h3>Add Table</h3>
+	<ul class="table-content">
+		<li>TMP_TMP</li>
+	</ul>
+</div>
+<div class="section">
+	<h2><span class="dt">Diff Date: </span>2010/06/12 16:53:57</h2>
+
+	<h3>Change Table</h3>
+	<div class="table-content">
+		<h4>VENDOR_CHECK</h4>
+		<div class="change-table-content">
+			<h5>Add Column</h5>
+			<ul class="column-content">
+				<li>TYPE_OF_INTEGER</li>
+				<li>TYPE_OF_BIGINT</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
